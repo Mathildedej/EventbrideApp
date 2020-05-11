@@ -58,4 +58,11 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  #################################################
+  # Envoyer des mails fictifs sans spammer pour de vrai
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.perform_deliveries = true
+  # Note importante : la ligne avec perform_deliveries = true permet d'éteindre (en la passant à false) tout envoi d'email de la part de ton app Rails. C'est bon de savoir qu'elle existe !
+
 end
