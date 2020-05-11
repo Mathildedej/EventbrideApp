@@ -27,6 +27,12 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+####################################### added by me
+# To see db clearly in terminal
+gem 'table_print'
+# faker names bdd
+gem 'faker'
+#######################################
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
