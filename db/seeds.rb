@@ -11,5 +11,6 @@ require 'faker'
 User.destroy_all
 
 10.times do |x|
-  User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.first_name, email: "jojo#{x}@yopmail.com")
+  u = User.create!(first_name: Faker::Name.first_name, password: "ririri", last_name: Faker::Name.first_name, email: "jojo#{x}@yopmail.com")
+  Event.create(start_date: "2021-01-01",duration: 30,title: "skateboarding",description: "Balade au bord de la mer",price: 20,location: "London")
 end

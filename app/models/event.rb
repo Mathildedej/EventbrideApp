@@ -13,6 +13,6 @@ class Event < ApplicationRecord
   #end 
   has_many :participations
   has_many :users, through: :participations
-  belongs_to :useradmin, class_name: "User"
+  #belongs_to :admin, class_name: 'User'
 
 end

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'events#index'
   devise_for :users
 
+  resources :events
   # pour regler le probleme de get quand je fais sign_out
   #devise_scope :user do
   #get '/users/sign_out' => 'devise/sessions#destroy'

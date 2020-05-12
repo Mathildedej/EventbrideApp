@@ -1,26 +1,47 @@
-<ul>
-  <% if user_signed_in? %>
-    <li>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    </li>
+<html>
+  <head>
+    <style type="text/css">
+    .jumbotron{
+      height: 500px;
+      background-image: url(<%= asset_path('party.jpg') %>);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;}
+    </style>
+    <title>TopEvent</title>
+  </head>
+  <body>
 
-    <li>
-      Voici ton email : <%= current_user.email %>
-    </li>
+  <section class="jumbotron text-center">
+    <div class="container" >
+    <h1 class="display-8 mt-5 pt-5 text-center font-weight-normal text-dark">BIENVENUE CHEZ TOPEVENT!</h1>
+    <p class="lead text-center font-weight-normal text-light">Découvrez nos évènements freestyle sans organisateur ;)</p>
+    <p><a class="btn btn-dark my-2" href="#">Créer un évènement :)</a></p>
+    </div>
+  </section>
+
+    <div class="col justify-content-center">
+      <div class = "text-center"><h4> Voici la liste actuelle des évènements: </h4></div>
+    </div>
+    <br />
+    <div class="container-event row justify-content-center">
+      <% id_event = 1%>
+      <% @events.each do |event| %>
+        <div class="card mt-2 text-center" style="width: 20rem;">
+          <h6 class="card-header"><%= event.title %></h6>
+          <div class="card-body">
+            <h6 class="card-title"><%= event.start_date %></h6>
+            <h6 class="card-title"><%= event.duration %></h6>
+            <h6 class="card-title"><%= event.description %></h6>
+            <h6 class="card-title"><%= event.location %></h6>
+
+            <a href="<%= event_path(event.id) %>" class="btn btn-dark">Event n° <%=id_event%></a>
+          </div>
+        </div>
+        <% id_event += 1%>
+      <% end %>
+    </div>
 
 
-    <li>
-      <%= link_to "Edit email / password", edit_user_registration_path %>
-    </li>
-
-  <% else %>
-    <li>    
-      <%= link_to "Sign in", new_user_session_path %>
-    </li>
-
-    <li>
-      <%= link_to "Sign up", new_user_registration_path %>
-    </li>
-
-  <% end %>
-</ul>
+  </body>
+</html>
