@@ -1,24 +1,25 @@
-# README
+# EVENTBRIDE LIKE APP WITH RAILS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+App to get the events of your town
+This is done with Ruby 2.5.1 and Rails 5.2.4.2
 
-Things you may want to cover:
+## Get Started
 
-* Ruby version
+* Please be sure to clone the project on your desktop.
+* Then do a bundle install to get what you need for this app.
+* Finally do a 
+``` 
+rails db:migrate
+rails db:migrate:status         #to make sure everything is up
+rails db:seed
 
-* System dependencies
+and play with the db !
+```
+## Heroku
 
-* Configuration
+```
+https://matdej-eventbride-app.herokuapp.com/
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Thank you
+Mathilde dej
